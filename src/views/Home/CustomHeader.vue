@@ -8,11 +8,13 @@
         <div class="flex">
           <button
             class="px-6 py-2 font-bold rounded-full text-white focus:outline-none"
+            @click="() => emit('createAccount')"
           >
             Crie uma conta
           </button>
           <button
             class="px-6 py-2 font-bold bg-white rounded-full text-brand-main focus:outline-none"
+            @click="() => emit('login')"
           >
             Entrar
           </button>
@@ -31,6 +33,7 @@
         <div>
           <button
             class="px-6 py-2 mt-10 font-bold bg-white rounded-full text-brand-main focus:outline-none"
+            @click="() => emit('createAccount')"
           >
             Crie uma conta grátis
           </button>
@@ -42,7 +45,9 @@
 
 <script>
 export default {
-
+  setup (_, { emit }) {
+    return { emit }
+  }
 }
 </script>
 
